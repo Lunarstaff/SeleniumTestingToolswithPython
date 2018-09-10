@@ -1,8 +1,12 @@
 # searchproduct.py
 
-
 from selenium import webdriver
 import os
+
+#获取IE DriverServer 路径
+# 我这里把驱动放在了Python路径下：
+# driver_path = "C:\\Program Files\\Python36\\IEDriverServer.exe"
+ie_driver_path = "C:\\Program Files\\Python36\\IEDriverServer.exe"
 
 # 创建一个新的IE浏览器会话
 ie = webdriver.Ie()
@@ -10,11 +14,11 @@ ie.implicitly_wait(30)
 ie.maximize_window()
 
 # 打开主页
-#https://zhi.hao123.com/
-ie.get("https://zhi.hao123.com/")
-
+#https://www.baidu.com/
+ie.get("https://www.baidu.com/")
+ie.implicitly_wait(30)
 # 获取输入搜索文本的框框（控件）
-search_text = ie.find_element_by_name("wd")
+search_text = ie.find_element_by_id("kw")
 search_text.clear()
 
 # 键入搜索关键字文本，并提交

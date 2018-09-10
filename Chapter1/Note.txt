@@ -62,10 +62,6 @@ Internet、本地Internet、受信任的站点、受限制的站点，这4个里
 问题2、
 查找元素的时候报：
 Message: Unable to find element with css selector == [name="q"]
-说是按css选择品查找，找不到名称为q的元素。
-解决方法：
-在浏览器找再次观察这个元素，是这样的：
-<input name="q" tabindex="0" class="search-combobox-input" id="q"
-role="combobox" aria-haspopup="true" accesskey="s" autofocus="autofocus"
-aria-label="请输入搜索文字" x-webkit-grammar="builtin:translate" aria-combobox="list" autocomplete="off">
-
+总是提示找不到元素，网上找了关天，总有人说是那几个常见的处理方式。实际上我这次找不到元素的原因是因为IE浏览器的安全模式设置问题。
+可以参考下面这篇文章：
+https://blog.csdn.net/joson1234567890/article/details/70673119
