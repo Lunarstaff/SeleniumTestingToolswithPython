@@ -1,0 +1,71 @@
+Chapter1-getting started with selenium webdriver and python
+
+https:#//135zyv4.xw0371.com/share/3ankoiSFUHzWb0Vp#
+
+
+-安装Selenium 包
+-选择并设置一个Python编辑器
+-使用Selenium webDriver的Python客户端库实现一个简单的脚本
+-在IE浏览器和Google浏览器之间实现跨浏览器支持
+
+
+-安装Selenium包：
+    1、使用pip安装工具安装：
+        在命令提示符窗口(Windows系统要使用管理员用户打开)执行:pip install selenium
+
+    # 注：pip使用：
+        1. 安装包：pip install  somepackage
+        2. 卸载包：pip uninstall somepackage
+        3.升级包：pip install --upgrade somepackage （或者：pip install -U somepackage）
+        4.查看过期包：pip list --outdated
+        5. 查看某包信息：pip show --files somepackage
+        6. 查看已安装包：pip list
+
+    2、下载包源文件，使用setup.py手动安装：
+        1.下载最新版本的Selenium 包源文件
+        2.在命令提示符窗口（Windows系统要使用管理员用户打开）执行：python setup.py install
+
+
+-选择并设置一个Python编辑器
+    1、反正我用的Pycharm
+    2、设置Pycharm
+
+
+-使用Selenium webDriver的Python客户端库实现一个简单的脚本
+
+
+问题1、
+# 创建一个新的IE浏览器会话
+ie = webdriver.Ie()
+这时报错如下：
+ Message: 'IEDriverServer.exe' executable needs to be in PATH.
+看样子应该是IED找不到IE，具体是因为环境没有IE的驱动
+解决方法：
+根据环境的Python版本和操作系统，下载对应版本的浏览器驱动，放到Python安装目录下。
+
+Chrome
+点击下载chrome的webdriver： http://chromedriver.storage.googleapis.com/index.html
+不同的Chrome的版本对应的chromedriver.exe 版本也不一样，下载时不要搞错了。如果是最新的Chrome, 下载最新的chromedriver.exe 就可以了。
+把chromedriver的路径也加到环境变量里。
+
+Firefox
+Firefox驱动下载地址为：https://github.com/mozilla/geckodriver/releases/
+根据自己的操作系统下载对应的驱动即可，使用的话，需要把驱动的路径和火狐浏览器的路径加入到环境变量里面才可以
+
+IE
+IE浏览器驱动下载地址为：http://selenium-release.storage.googleapis.com/index.html
+根据自己selenium版本下载对应版本的驱动即可，python的话，下载里面的IEDriverServerxxx.zip即可，这个是区分32和64位系统的，
+根据自己的系统下载即可，需要注意的是，如果要打开IE浏览器的话，需要在浏览器的Internet选项中的安全页里有4个安全选项，
+Internet、本地Internet、受信任的站点、受限制的站点，这4个里面都有一个启用保护模式，都需要勾选上才可以，
+还得把驱动的路径加入到环境变量中。
+
+问题2、
+查找元素的时候报：
+Message: Unable to find element with css selector == [name="q"]
+说是按css选择品查找，找不到名称为q的元素。
+解决方法：
+在浏览器找再次观察这个元素，是这样的：
+<input name="q" tabindex="0" class="search-combobox-input" id="q"
+role="combobox" aria-haspopup="true" accesskey="s" autofocus="autofocus"
+aria-label="请输入搜索文字" x-webkit-grammar="builtin:translate" aria-combobox="list" autocomplete="off">
+
