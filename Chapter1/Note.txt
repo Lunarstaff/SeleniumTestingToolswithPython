@@ -65,3 +65,6 @@ Message: Unable to find element with css selector == [name="q"]
 总是提示找不到元素，网上找了关天，总有人说是那几个常见的处理方式。实际上我这次找不到元素的原因是因为IE浏览器的安全模式设置问题。
 可以参考下面这篇文章：
 https://blog.csdn.net/joson1234567890/article/details/70673119
+
+
+问题3、根据xpath定位元素：
