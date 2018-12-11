@@ -163,3 +163,20 @@ unittest库的TestCase类提供了许多功能方法来检查预期结果和应�
 └----------------------------------------------─----------------------------┘
 
 【测试套件】
+使用unittest的TestSuites 功能，可以将各种测试收集到逻辑组中，然后集成到一个统一的测试套件里。
+这样就可以通过一个单独的命令来执行这些测试。
+这些可以通过使用 TestSuite, TestLoader 和 TestRunner 这些类实现。
+
+# 注、unittest_test_v3.py
+
+
+
+【生成HTML测试报告】
+unittest 库没有内置可以生成漂亮格式报告的方法，我们可以使用从unittert 扩展而来的HTMLTestRunner。
+下面使用HTMLTestRunner在我们的测试中生成美观的测试报告。修改代码如下：
+1、修改测试套件文件，添加HTMLTestRunner
+2、创建包含实际执行情况的报告输出文件
+3、配置HTMLTestRunner选项
+4、执行测试
+
+# 注、unittest_test_v4.py

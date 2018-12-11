@@ -2,7 +2,6 @@
 import unittest
 from selenium import webdriver
 
-
 class SearchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

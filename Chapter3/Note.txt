@@ -1,0 +1,32 @@
+Chapter3-查找（定位）元素
+
+【定位元素】
+-深入学习使用selenium WebDriver查找（定位）元素
+-了解如何审查和定义定位器，以便使用开发者工具（F12）在浏览器中查找可用的元素
+-通过多种方法查找元素，包括ID，Name，和Class属性值，使用XPath和CSS选择器来定义更多的动态定位器。
+-使用多种find_element_by 方法来查找元素，这样可以使用seleniumwebDriver让这些元素一起自动运行。
+
+例：.\testcode\form-test.html
+每一个元素像search文本框和search按钮 都会用一个 在<form>标签表示的表单里面的<input>标签表示
+元素标签显示要用一个 <label>标签表示。
+JavaScript脚本要用 <script>标签表示。
+
+例子中的search文本框用了带有id,type,name,value,class和maxlength等属性定义的<input>标签表示。
+<input id=“search” type=“text” name=“q” value=”” class=“input-text” maxlength=“128” />
+
+【使用浏览器自带的开发者工具（F12）查找元素定位器】
+打开浏览器使用firebug 或者打开F12开发者工具，使用元素审查功能
+
+【使用Selenium WebDriver查找元素】
+Selenium提供了多种 find_element_by 方法在Web页面上查找元素，
+这些方法根据我们提供的查找标准来查找某个元素。
+如果找到了对应的元素，就会返回一个WebElement的实例，
+如果Selenium根据我们提供的查找标准找不到元素，就会抛出一个NoSuchElementException的异常。
+
+Selenium也提供了多咱 find_elements_by 方法用于定位多个元素，
+这些方法根据我们提供的“参数”查找并返回一个元素列表
+
+这些方法我整理到如下文件中请参考：
+\Chapter3\Selenium find methods.docx
+
+【使用元素的id属性查找元素】

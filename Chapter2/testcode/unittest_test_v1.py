@@ -4,11 +4,12 @@ import unittest
 from selenium import webdriver
 
 class SearchTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUp(cls):
         # 创建一个IE浏览器会话进程
-        self.ie = webdriver.Ie()
-        self.ie.implicitly_wait(30) # 隐式等待30s
-        self.ie.maximize_window()   # 窗口最大化
+        cls.ie = webdriver.Ie()
+        cls.ie.implicitly_wait(30) # 隐式等待30s
+        cls.ie.maximize_window()   # 窗口最大化
 
     def test_search_ticket_001(self):
         # 打开指定的URL
@@ -39,8 +40,8 @@ class SearchTests(unittest.TestCase):
     def test_iqiyi_search_001(self):
         self.url_iqiyi = 'http://www.iqiyi.com/'
         self.ie.get(self.url_iqiyi)
-        self.iqiyi_search = self.ie.find_element_by_id("nav_searchboxIn")
-        self.iqiyi_search.send_keys("让子弹飞一会儿").submit()
+        self.iqiyi_search = self.ie.find_element_by_xpath("//input[@class='search-box-input']")
+        self.iqiyi_search.send_keys("让子弹飞一会儿")
 
     def tearDown(self):
         # 关闭浏览器
