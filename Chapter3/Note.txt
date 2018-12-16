@@ -30,3 +30,45 @@ Selenium也提供了多咱 find_elements_by 方法用于定位多个元素，
 \Chapter3\Selenium find methods.docx
 
 【使用元素的id属性查找元素】
+find_element_by_id() 方法返回第一个匹配到id属性值的元素，
+如果没有匹配到id属性值会抛出一个NoSuchElementException的异常
+find_elements_by_id() 方法返回所有匹配到id属性值的元素。
+例如，在百度中查找id值为"kw"的元素：
+ie.get("https://www.baidu.com/")
+ie.implicitly_wait(30)
+baidu_kw = ie.find_element_by_id("kw")
+
+【使用元素的name属性查找元素】
+find_element_by_name() 方法返回与name属性值匹配到的元素。
+例如在百度中查找name属性值为"wd"的元素：
+ie.get("https://www.baidu.com/")
+ie.implicitly_wait(30)
+baidu_wd = ie.find_element_by_name("wd")
+
+【使用元素有class名称查找元素】
+不同与使用元素id和name属性查找元素，我们还可以使用class属性查找元素。
+例如在百度中查找class名称为"s_ipt"的元素：
+ie.get("https://www.baidu.com/")
+ie.implicitly_wait(30)
+baidu_in = ie.find_element_by_class_name("s_ipt")
+
+注，使用元素id、name、class属性来查找元素是首先的而且是最快的查找元素方法。
+当上面这些方法不能满足使用时，也可以使用selenium WebDriver提供的另外一些方法。
+
+【使用元素名称（tag name）查找元素】
+find_element_by_tag_name() 方法返回与HTML标签名称匹配的元素。
+当我们想通过tagname查找元素的时候，这个方法是很有用的。
+比如，通过查找表格中所有的<tr>标签来确定有多少列
+
+从FreeMind 导出的html文件：
+file:///C:/E-Data-File/腾讯课堂/Python入门/SeleniumTestingToolswithPython/Chapter3/testcode/思维导图生成案例.html
+
+【使用XPath查找元素】
+XPath是应用于在XML文件中查找定位本地节点的一种查询语言，适用于所有的主流web浏览器。
+当我们找不到一个合适的id，name或者class属性值来定位一个元素的时候，使用XPath是一种高级方法。
+我们可以使用XPath找到与一个有id或者name属性的元素相对或绝对关系的元素。
+我们也可以在XPath查询中使用除了id，name或者class之外的已定义属性
+我们还可以通过使用XPath函数（比如：starts-with(), contains(), and ends-with()）
+    对属性值进行部分检查来找到元素。
+
+
