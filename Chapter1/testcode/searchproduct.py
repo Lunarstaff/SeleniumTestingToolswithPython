@@ -1,5 +1,4 @@
 # searchproduct.py
-
 from selenium import webdriver
 import os
 

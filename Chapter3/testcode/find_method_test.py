@@ -22,10 +22,15 @@ class Find_Element_Test(unittest.TestCase):
 
     def test_search_tagname(self):
         self.ie.get("https://www.baidu.com/")
-
         # 获取所有的ur标签
         ele_script = self.ie.find_elements_by_tag_name("script")
         print("script标签有{}个".format(len(ele_script)))
+
+    def test_xpat_search(self):
+        self.ie.get("https://detail.tmall.com/item.htm?spm=a1z10.5-b-s.w4011-14445208949.68.5f13a0e9sn1ukV&id=559262362075&rn=e5615e473665193c98648c2b8e4dcce2&abbucket=15&sku_properties=5919063:33030646")
+        pingjia = self.ie.find_element_by_xpath("//a[@href='#J_Reviews']")
+        pingjiaNum = self.ie.find_element_by_xpath("//em[@class='J_ReviewsCount']")
+        self.assertEqual(pingjia.text, "累计评价 " + pingjiaNum.text)
 
 
     #def tearDown(self):
